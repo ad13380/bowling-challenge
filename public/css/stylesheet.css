@@ -1,0 +1,8 @@
+.column {
+  padding: 30px;
+  background-color:#aaa;
+}
+
+.row {
+  display: flex;
+}
