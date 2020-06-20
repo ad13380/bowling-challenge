@@ -1,15 +1,32 @@
 class Score {
   constructor() {
+    this.rollArray = [];
     this.scoreOrder = [];
+    this.totalScore = 0;
     this.isEndOfFrame = false;
   }
-  
-  frameScore(scoreOrderRow, rollArray) {
-    var calculatedScore = 0;
-    for (var i = 0; i < scoreOrderRow.length; i++) {
-      calculatedScore += this.frameSubScore(scoreOrderRow[i], rollArray)
+
+  total() {
+    return this.totalScore;
+  }
+
+  addRoll(rollValue) {
+    this.rollArray.push(rollValue)
+    this.process(); 
+  }
+
+  process() {
+    this.assignScoreOrder(this.rollArray);
+    this.frameScore(this.scoreOrder, this.rollArray);
+  }
+
+  frameScore(scoreOrder, rollArray) {
+    var currentScoreOrderRow = scoreOrder[rollArray.length - 1];
+    var calcFrameScore = 0;
+    for (var i = 0; i < currentScoreOrderRow.length; i++) {
+      calcFrameScore += this.frameSubScore(currentScoreOrderRow[i], rollArray);
     }
-    return calculatedScore;
+    this.totalScore += calcFrameScore;
   }
 
   frameSubScore(rollIndex, rollArray) {
