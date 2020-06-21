@@ -1,8 +1,11 @@
 body {
-  font-family: helvetica;
+  font-family: "Segoe UI";
+  background-color: #37384e;
+
 }
 
 
+/* 
 .column {
   padding: 30px;
   background-color:#aaa;
@@ -10,4 +13,4 @@ body {
 
 .row {
   display: flex;
-}
+} */

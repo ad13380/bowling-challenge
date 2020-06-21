@@ -66,7 +66,6 @@ $(document).ready(function() {
     } else {
       enableAllButtons();
     }
-    console.log(game.rollNumber)
   }
 
   function checkEndGame() {

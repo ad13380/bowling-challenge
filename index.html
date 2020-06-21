@@ -5,37 +5,40 @@
     <title>Bowling Score Card</title>
     <link rel="stylesheet" href="public/css/stylesheet.css" type="text/css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script type="text/javascript" src="public/javascript/src/Score.js"></script>
     <script type="text/javascript" src="public/javascript/src/Game.js"></script>
     <script type="text/javascript" src="public/javascript/src/interface.js"></script>
   </head>
-  <body>
-    <p id="its_over"></p>
+  <body style="background-color:#37384e">
+    <h1 class="text-light">Bowling Score Card</h1>
     <div>
-      <button id="button_0">GUTTER</button>
-      <button id="button_1">1</button>
-      <button id="button_2">2</button>
-      <button id="button_3">3</button>
-      <button id="button_4">4</button>
-      <button id="button_5">5</button>
-      <button id="button_6">6</button>
-      <button id="button_7">7</button>
-      <button id="button_8">8</button>
-      <button id="button_9">9</button>
-      <button id="button_10">STRIKE</button>
+      <button class="btn btn-secondary" id="button_0">GUTTER</button>
+      <button class="btn btn-secondary" id="button_1">1</button>
+      <button class="btn btn-secondary" id="button_2">2</button>
+      <button class="btn btn-secondary" id="button_3">3</button>
+      <button class="btn btn-secondary" id="button_4">4</button>
+      <button class="btn btn-secondary" id="button_5">5</button>
+      <button class="btn btn-secondary" id="button_6">6</button>
+      <button class="btn btn-secondary" id="button_7">7</button>
+      <button class="btn btn-secondary" id="button_8">8</button>
+      <button class="btn btn-secondary" id="button_9">9</button>
+      <button class="btn btn-secondary" id="button_10">STRIKE</button>
     </div> 
-    <div class="row">
-      <div class="column" id="frame_number">
-        <h4>Frame</h1>
-      </div>
-      <div class="column" id="roll_number">
-        <h4>Roll</h1>
-      </div>
-      <div class="column" id="roll_values">
-        <h4>Pins Knocked Down</h1>
-      </div>
-      <div class="column" id="roll_scores">
-        <h4>Total Score</h1>
+    <div class="container justify-content-center">
+      <div class="row text-light">
+        <div class="col-lg-1" id="frame_number">
+          <h4>Frame</h1>
+        </div>
+        <div class="col-lg-1" id="roll_number">
+          <h4>Roll</h1>
+        </div>
+        <div class="col-lg-3" id="roll_values">
+          <h4>Pins Knocked Down</h1>
+        </div>
+        <div class="col-lg-2" id="roll_scores">
+          <h4>Total Score</h1>
+        </div>
       </div>
     </div>
   </body>
