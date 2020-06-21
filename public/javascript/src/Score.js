@@ -44,20 +44,19 @@ class Score {
     var lastRollIndex = rollArray.length - 1;
     if (this._isStrike(lastRollIndex, rollArray)) {
       this._pushStrikeScore(lastRollIndex);
-    } else {
+      this._switchRolls();    
+    } else {    
       if (this.isEndOfFrame) {
         if (this._isSpare(lastRollIndex, rollArray)) {
           this._pushSpareScore(lastRollIndex);
-          this._switchRolls();
         } else {
           this._pushRegularScore(lastRollIndex);
-          this._switchRolls();
         }
       } else {
-        this._pushBufferScore(lastRollIndex);
-        this._switchRolls();
+        this._pushBufferScore(lastRollIndex);      
       }
-    } 
+    }
+    this._switchRolls(); 
   }
 
   _pushStrikeScore(rollIndex) {

@@ -19,15 +19,16 @@ $(document).ready(function() {
     $(`#button_${btn_number}`).on('click', function() {
       game.update(btn_number);
       updateScorecard(btn_number);
+      disableInvalidButtons(btn_number);
       checkEndGame();
     });
   }
 
   function updateScorecard(rollValue) {
-    renderRoll(rollValue)
+    renderRoll(rollValue);
     rednerRollNumber()
-    renderFrameNumber(rollValue)
-    renderScore()
+    renderFrameNumber(rollValue);
+    renderScore();
   }
 
   function rednerRollNumber() {
@@ -56,9 +57,33 @@ $(document).ready(function() {
     }   
   }
 
+  function disableInvalidButtons(rollValue) {
+    var diff = 10 - rollValue
+    if (diff != 0 &&  game.rollNumber == 1) {
+      for (var i = 10; i > diff; i--) {
+        $(`#button_${i}`).prop('disabled', true);
+      } 
+    } else {
+      enableAllButtons();
+    }
+    console.log(game.rollNumber)
+  }
+
   function checkEndGame() {
     if (game.isEnd()) {
-      $('#its_over').html('<h1>THATS IT, ITS OVER</h1>')
+      disableAllButtons();
     }
+  }
+
+  function enableAllButtons() {
+    for (var i = 0; i < 11; i++) {
+      $(`#button_${i}`).prop('disabled', false);
+    } 
+  }
+
+  function disableAllButtons() {
+    for (var i = 0; i < 11; i++) {
+      $(`#button_${i}`).prop('disabled', true);
+    } 
   }
 })

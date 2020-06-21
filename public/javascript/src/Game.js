@@ -32,7 +32,7 @@ class Game {
       if (this.bonusRoundNumber == 2) {
         return true;
       }
-      this.bonusRoundNumber++;
+      this._updateBonusRoundNumber();
     }
     return false;
   }
@@ -44,6 +44,10 @@ class Game {
     } else {
       this.rollNumber = 2;
     }
+  }
+
+  _updateBonusRoundNumber() {
+    this.bonusRoundNumber++;
   }
 
   _updateFrameNumber() {
